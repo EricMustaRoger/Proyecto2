@@ -149,3 +149,104 @@ ALTER TABLE `tbl_usuarios`
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/* Creacion de relaciones */;
+alter table tbl_incidencias
+  add constraint FK_usuincidencia foreign key (usu_id) 
+  references tbl_usuarios(usu_id);
+
+alter table tbl_reservas
+  add constraint FK_usureserva foreign key (usu_id) 
+  references tbl_usuarios(usu_id);
+
+alter table tbl_detalles_reservas
+  add constraint FK_reservadetalle foreign key (rec_id) 
+  references tbl_recursos(rec_id);
+
+alter table tbl_reservas
+  add constraint FK_recursoreserva foreign key (rec_id) 
+  references tbl_recursos(rec_id);
+
+alter table tbl_incidencias
+  add constraint FK_recuincidencia foreign key (rec_id) 
+  references tbl_recursos(rec_id);
+
+  -- Insertamos los datos de la bbdd
+  INSERT INTO tbl_usuarios (usu_name,usu_pass) 
+VALUES
+("usuario1","usuario1");
+INSERT INTO tbl_usuarios (usu_name,usu_pass) 
+VALUES
+("usuario2","usuario2");
+INSERT INTO tbl_usuarios (usu_name,usu_pass) 
+VALUES
+("usuario3","usuario3");
+INSERT INTO tbl_usuarios (usu_name,usu_pass) 
+VALUES
+("usuario4","usuario4");
+INSERT INTO tbl_usuarios (usu_name,usu_pass) 
+VALUES
+("usuario5","usuario5");
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Aula 1 Teoria","1");
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Aula 2 Teoria","1");
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Aula 3 Teoria","1");
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Aula 4 Teoria","1");
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Aula 1 Informatica","1");
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Aula 2 Informatica","1");
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Despacho 1 entrevista","1");
+
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Despacho 2 entrevista","1");
+
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Sala Reuniones","1");
+
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Portatil 1","1");
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Portatil 2","1");
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Portatil 3","1");
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Proyector","1");
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Carro portatiles","1");
+
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Movil 1","1");
+INSERT INTO tbl_recursos (rec_name,rec_disp) 
+VALUES
+("Movil 2","1");
