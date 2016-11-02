@@ -591,8 +591,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .work-inner .work-grid {
   position: relative;
-  width: 100%;
-  height: 300px;
+  width: 50%;
+  height: 150px;
   float: left;
   background-size: cover;
   background-position: center center;
@@ -612,12 +612,12 @@ h1, h2, h3, h4, h5, h6, figure {
   bottom: 0;
   left: 0;
   right: 0;
-  padding-top: 130px;
+  padding-top: 40px;
   content: '\e08a';
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   color: #fff;
-  font-size: 20px;
+  font-size: 30px;
 }
 .work-inner .desc {
   padding: 30px;
