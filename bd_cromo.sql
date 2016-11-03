@@ -54,6 +54,7 @@ CREATE TABLE `tbl_incidencias` (
 CREATE TABLE `tbl_recursos` (
   `rec_id` int(11) NOT NULL,
   `rec_name` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `rec_tipo` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `rec_disp` bit(1) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
@@ -82,6 +83,13 @@ CREATE TABLE `tbl_usuarios` (
   `usu_name` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `usu_pass` varchar(15) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+INSERT INTO `tbl_usuarios` (`usu_id`, `usu_name`, `usu_pass`) VALUES
+(1, 'usu', '3c9909afec25354'),
+(2, 'usu2', '3c9909afec25354'),
+(3, 'usu3', '3c9909afec25354'),
+(4, 'usu4', '3c9909afec25354'),
+(5, 'usu5', '3c9909afec25354');
 
 --
 -- Índices para tablas volcadas
@@ -171,7 +179,8 @@ alter table tbl_incidencias
   references tbl_recursos(rec_id);
 
   -- Insertamos los datos de la bbdd
-  INSERT INTO tbl_usuarios (usu_name,usu_pass) 
+
+ /* INSERT INTO tbl_usuarios (usu_name,usu_pass) 
 VALUES
 ("usuario1","usuario1");
 INSERT INTO tbl_usuarios (usu_name,usu_pass) 
@@ -185,7 +194,7 @@ VALUES
 ("usuario4","usuario4");
 INSERT INTO tbl_usuarios (usu_name,usu_pass) 
 VALUES
-("usuario5","usuario5");
+("usuario5","usuario5");*/
 
 INSERT INTO tbl_recursos (rec_name,rec_disp) 
 VALUES
