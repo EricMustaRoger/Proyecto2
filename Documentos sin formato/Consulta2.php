@@ -8,14 +8,14 @@
 
 	<?php
 
-	extract($_REQUEST);
-
-
-
-foreach ($reservar[] as $id)
-   {
-  echo "Recurso ID: ----- " . $id . "-----";
-   }
+ 
+	
+		extract($_REQUEST);
+	foreach ($reservar as $id) {
+  	echo "Recurso ID: ----- " . $id. "----- </br> </br>";
+		# code...
+	}
+  	
 
 	
 
