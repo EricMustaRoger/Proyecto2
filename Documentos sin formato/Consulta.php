@@ -39,7 +39,9 @@
 				echo "Nombre Recurso: " . $recurso['rec_name'] . "<br/>";
 			
 				echo "Tipo Recurso: " . $recurso['rec_tipo'] . "<br/>";
-				?><input type="checkbox" name="reservar[]" value="$num"/>Reservar<br/><?php 
+				$rec_id=$recurso['rec_id'];
+				?><input type="checkbox" name="reservar[]" value="$rec_id"/>Reservar<br/<?php 
+				echo $rec_id;
 				$foto='img/'.$recurso['rec_foto'];
 				if (file_exists ($foto)){
 					echo "<img src='" . $foto . "' width='150'/><br/><br/>";
