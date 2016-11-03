@@ -97,7 +97,7 @@
 						<a href="#" class="work-grid" style="background-image: url
 				(<?php 
 
-				echo "$foto='img/'.$recurso['rec_foto']";
+				echo "$foto='img/'".$recurso['rec_foto'];
 
 				echo " if (file_exists ($foto)){";
 					echo "<img src='" . $foto . "' width='150'/><br/><br/>";
@@ -107,8 +107,8 @@
 				?>);">
 						</a>
 						<div class="desc">
-							<h3><a href="#"><?php echo $recurso['rec_name'] ?></a></h3>
-							<span><?php echo $recurso['rec_tipo'] ?></span>
+							<h3><a href="#"><?php echo $recurso['rec_name']; ?></a></h3>
+							<span><?php echo $recurso['rec_tipo']; ?></span>
 						<input type="checkbox" name="reservar[]" value="<?php echo $num; ?>"/>Reservar<br/>
 						</div>
 					</div>
@@ -121,16 +121,7 @@
 		}
 		
 		mysqli_close($conexion);
-		/*
-		//empezamos a mostrar todos los datos
-		echo "Fecha " . $fecha_robatori . "<br/>";
-		echo "Lugar: " . $lugar . "<br/>";
-		echo "Marca bici: " . $marca . "<br/>";
-		echo "Modelo bici: ". $modelo . "<br/>";
-		echo "Antiguedad: ". $Antiguedad . "<br/>";
-		echo "numero serie: ". $numeroserie . "<br/>";
-		echo "Color :". $color . "<br/>";
-		*/
+		
 	?>
 					
 				
