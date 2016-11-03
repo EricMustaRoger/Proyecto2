@@ -19,19 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `bd_cromo`
 --
-
--- --------------------------------------------------------
-
---
--- Estructura de tabla para la tabla `tbl_detalles_reservas`
---
-
-CREATE TABLE `tbl_detalles_reservas` (
-  `det_id` int(11) NOT NULL,
-  `res_id` int(11) NOT NULL,
-  `rec_id` int(11) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
-
 -- --------------------------------------------------------
 
 --
@@ -56,6 +43,7 @@ CREATE TABLE `tbl_recursos` (
   `rec_name` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `rec_tipo` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
   `rec_disp` bit(1) NOT NULL
+  `rec_foto` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
 
 -- --------------------------------------------------------
@@ -94,13 +82,6 @@ INSERT INTO `tbl_usuarios` (`usu_id`, `usu_name`, `usu_pass`) VALUES
 --
 -- Índices para tablas volcadas
 --
-
---
--- Indices de la tabla `tbl_detalles_reservas`
---
-ALTER TABLE `tbl_detalles_reservas`
-  ADD PRIMARY KEY (`det_id`);
-
 --
 -- Indices de la tabla `tbl_incidencias`
 --
@@ -131,9 +112,6 @@ ALTER TABLE `tbl_usuarios`
 
 --
 -- AUTO_INCREMENT de la tabla `tbl_detalles_reservas`
---
-ALTER TABLE `tbl_detalles_reservas`
-  MODIFY `det_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT de la tabla `tbl_incidencias`
 --
@@ -166,10 +144,6 @@ alter table tbl_reservas
   add constraint FK_usureserva foreign key (usu_id) 
   references tbl_usuarios(usu_id);
 
-alter table tbl_detalles_reservas
-  add constraint FK_reservadetalle foreign key (rec_id) 
-  references tbl_recursos(rec_id);
-
 alter table tbl_reservas
   add constraint FK_recursoreserva foreign key (rec_id) 
   references tbl_recursos(rec_id);
@@ -196,66 +170,66 @@ INSERT INTO tbl_usuarios (usu_name,usu_pass)
 VALUES
 ("usuario5","usuario5");*/
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Aula 1 Teoria","1");
+("Aula 1 Teoria","Aula","1","01.jpg");
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Aula 2 Teoria","1");
+("Aula 2 Teoria","Aula","1","02.jpg");
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Aula 3 Teoria","1");
+("Aula 3 Teoria","Aula","1","03.jpg");
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Aula 4 Teoria","1");
+("Aula 4 Teoria","Aula","1","04.jpg");
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Aula 1 Informatica","1");
+("Aula 1 Informatica","Aula","1","05.jpg");
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Aula 2 Informatica","1");
+("Aula 2 Informatica","Aula","1","06.jpg");
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Despacho 1 entrevista","1");
-
-
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
-VALUES
-("Despacho 2 entrevista","1");
+("Despacho 1 entrevista","Despacho","1","07.jpg");
 
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Sala Reuniones","1");
+("Despacho 2 entrevista","Despacho","1","08.jpg");
 
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Portatil 1","1");
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
-VALUES
-("Portatil 2","1");
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
-VALUES
-("Portatil 3","1");
+("Sala Reuniones","Sala Reuniones","1","09.jpg");
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
-VALUES
-("Proyector","1");
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Carro portatiles","1");
+("Portatil 1","Portatil","1","10.jpg");
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
+VALUES
+("Portatil 2","Portatil","1","11.jpg");
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
+VALUES
+("Portatil 3","Portatil","1","12.jpg");
 
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Movil 1","1");
-INSERT INTO tbl_recursos (rec_name,rec_disp) 
+("Proyector","Proyector","1","13.jpg");
+
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
 VALUES
-("Movil 2","1");
+("Carro portatiles","Portatil","1","14.jpg");
+
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
+VALUES
+("Movil 1","Movil","1","15.jpg");
+INSERT INTO tbl_recursos (rec_name,rec_tipo,rec_disp,rec_foto)
+VALUES
+("Movil 2","Movil","1","16.jpg");
