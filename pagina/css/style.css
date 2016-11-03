@@ -499,7 +499,7 @@ h1, h2, h3, h4, h5, h6, figure {
 .featured-grid, .featured-grid.featured-grid-2 {
   width: 100%;
   height: 510px;
-  float: left;
+  float: center;
   background-size: cover;
   background-position: center center;
   position: relative;
@@ -591,8 +591,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .work-inner .work-grid {
   position: relative;
-  width: 50%;
-  height: 150px;
+  width: 100%;
+  height: 120px;
   float: left;
   background-size: cover;
   background-position: center center;
@@ -602,7 +602,7 @@ h1, h2, h3, h4, h5, h6, figure {
   -ms-border-radius: 4px;
   border-radius: 4px;
 }
-.work-inner .work-grid:after {
+/*.work-inner .work-grid:after {
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -617,7 +617,7 @@ h1, h2, h3, h4, h5, h6, figure {
   background: rgba(0, 0, 0, 0.5);
   opacity: 0;
   color: #fff;
-  font-size: 30px;
+  font-size: 30px;*/
 }
 .work-inner .desc {
   padding: 30px;
