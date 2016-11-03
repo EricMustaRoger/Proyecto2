@@ -59,7 +59,8 @@
 				</div>
 			</div>
 			<div class="row">
-					<?php
+					
+<?php
 	$conexion = mysqli_connect('localhost', 'root', '', 'bd_cromo');
 		//le decimos a la conexión que los datos los devuelva diréctamente en utf8, así no hay que usar htmlentities
 		$acentos = mysqli_query($conexion, "SET NAMES 'utf8'");
@@ -90,32 +91,31 @@
 		if(mysqli_num_rows($reservas)!=0){
 			echo "Número de productos: " . mysqli_num_rows($reservas) . "<br/><br/>";
 			while($recurso = mysqli_fetch_array($reservas)){
-				
-				?> <div class="col-md-3 text-center">
+			?>		
+			<div class="col-md-3 text-center">
 					<div class="work-inner">
-						<a href="#" class="work-grid" style="background-image: url(<?php echo "$foto='img/'.$recurso['rec_foto'];" echo "if (file_exists ($foto)){
-					echo '<img src='' . $foto . '' width='150'/><br/><br/>';" echo	"	} else {
-					echo '<img src='img/0.jpg' width='150'/><br/><br/>'; } " ?>);"> </a>
+						<a href="#" class="work-grid" style="background-image: url
+				(<?php 
+
+				echo "$foto='img/'.$recurso['rec_foto']";
+
+				echo " if (file_exists ($foto)){";
+					echo "<img src='" . $foto . "' width='150'/><br/><br/>";
+				echo "} else {";
+					echo "<img src='img/0.jpg' width='150'/><br/><br/>";
+				}
+				?>);">
+						</a>
 						<div class="desc">
-							<h3><a href="#"><?php echo $recurso['rec_name'];?></a></h3>
-							<span><?php echo $recurso['rec_tipo'];?></span>
-							<input type="checkbox" name="aficiones[]" value="tecnologia"/>Tecnología<br/>
+							<h3><a href="#"><?php echo $recurso['rec_name'] ?></a></h3>
+							<span><?php echo $recurso['rec_tipo'] ?></span>
+						<input type="checkbox" name="reservar[]" value="<?php echo $num; ?>"/>Reservar<br/>
 						</div>
 					</div>
 				</div>
+
 				<?php
-				$rec_id=$recurso['rec_id'];
-				?>
-				<input type="checkbox" name="reservar" value=$rec_id/>Reservar<br/>
-				<?php 
-				echo $rec_id;
-				$foto='img/'.$recurso['rec_foto'];
-				if (file_exists ($foto)){
-					echo "<img src='" . $foto . "' width='150'/><br/><br/>";
-				} else {
-					echo "<img src='img/0.jpg' width='150'/><br/><br/>";
-				}
-			}
+
 		} else {
 			echo " <br/> <br/>No hay datos que mostrar!";
 		}
@@ -132,6 +132,7 @@
 		echo "Color :". $color . "<br/>";
 		*/
 	?>
+					
 				
 			</div>
 		</div>
