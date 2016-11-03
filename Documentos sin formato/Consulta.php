@@ -37,7 +37,22 @@
 		if(mysqli_num_rows($reservas)!=0){
 			echo "Número de productos: " . mysqli_num_rows($reservas) . "<br/><br/>";
 			while($recurso = mysqli_fetch_array($reservas)){
-				echo "Nombre Recurso: " . $recurso['rec_name'] . "<br/>";
+				
+				?> <div class="col-md-3 text-center">
+					<div class="work-inner">
+						<a href="#" class="work-grid" style="background-image: url(<?php echo "$foto='img/'.$recurso['rec_foto']; if (file_exists ($foto)){
+					echo '<img src='' . $foto . '' width='150'/><br/><br/>';
+				} else {
+					echo '<img src='img/0.jpg' width='150'/><br/><br/>';
+				} " ?>);"> </a>
+						<div class="desc">
+							<h3><a href="#"><?php echo $recurso['rec_name'];?></a></h3>
+							<span><?php echo $recurso['rec_tipo'];?></span>
+							<input type="checkbox" name="aficiones[]" value="tecnologia"/>Tecnología<br/>
+						</div>
+					</div>
+				</div>
+				echo "Nombre Recurso: " . $recurso['rec_name'];. "<br/>";
 			
 				echo "Tipo Recurso: " . $recurso['rec_tipo'] . "<br/>";
 				$num=$recurso['rec_id'];
