@@ -95,15 +95,14 @@
 			<a href="#" class="work-grid" style="background-image: url(<?php echo $foto; ?>);"></a>
 		
 			<?php
-			echo '<div id="myDiv">';
 			echo '<div class="desc">';
 			echo '<h3><a href="#"> '.$recurso['rec_name'].'</a></h3>';
 			echo '<span> '.$recurso['rec_tipo'].'</span> <br/>';
-			echo '<input type="checkbox"  name="reservar[]" value="$num" onclick="myFunction()" />Reservar<br/>';
+			echo '<input type="checkbox"  name="reservar[]" value="$num"/>Reservar<br/>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div>';
-			echo '</div>';
+			
 		}
 		} else {
 			echo " <br/> <br/> No hay datos que mostrar!";
@@ -134,11 +133,6 @@
 	</footer>
 	</div>
 	
-		<script>
-		function myFunction() {
-		    document.getElementById("myDiv").style.border = "thick solid #1FB57B";
-		}
-		</script>
 
 	
 	<!-- jQuery -->
