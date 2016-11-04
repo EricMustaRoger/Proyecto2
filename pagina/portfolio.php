@@ -84,16 +84,11 @@
 		if(mysqli_num_rows($reservas)!=0){
 			echo "Número de productos: " . mysqli_num_rows($reservas) . "<br/><br/>";
 			while($recurso = mysqli_fetch_array($reservas)){
-					
+			$foto='img/'.$recurso['rec_foto'];
+
 			echo '<div class="col-md-3 text-center">'; 
 			echo '<div class="work-inner">';
-			echo '<a href="#" class="work-grid" style="background-image: url ($foto=img/  '. $recurso['rec_foto'].'
-				if (file_exists ($foto)){<img src="' . $foto . '" width="150"/><br/><br/>
-				} else {
-				<img src="img/0.jpg" width="150"/><br/><br/>
-				}
-				);">';
-			echo '</a>';
+			echo '<a href="#" class="work-grid" style="background-image: url (if (file_exists ($foto)){<img src="'.$foto.'" width="150"/><br/><br/>} else {<img src="img/0.jpg" width="150"/><br/><br/>});"></a>';
 			echo '<div class="desc">';
 			echo '<h3><a href="#"> '.$recurso['rec_name'].'</a></h3>';
 			echo '<span> '.$recurso['rec_tipo'].'</span>';
