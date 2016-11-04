@@ -31,7 +31,11 @@
 
 	</head>
 	<body>
+<<<<<<< HEAD
 	<form action="realizar_reserva.php" method="GET">
+=======
+	<form name="f1" action="realizar_reserva.php" method="GET">
+>>>>>>> origin/master
 	
 	<div id="fh5co-page">
 	<header id="fh5co-header" role="banner">
@@ -94,11 +98,12 @@
 			?>
 			<a href="#" class="work-grid" style="background-image: url(<?php echo $foto; ?>);"></a>
 		
-			<?php
+		<?php
 			echo '<div class="desc">';
 			echo '<h3><a href="#"> '.$recurso['rec_name'].'</a></h3>';
 			echo '<span> '.$recurso['rec_tipo'].'</span>';
-			echo '<input type="checkbox" name="reservar[]" value="si"/>Reservar<br/>';
+			$id= $recurso['rec_id'];
+			echo '<input type="checkbox" name="reservar[]" value="$id"/>Reservar<br/>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div>';
@@ -110,7 +115,7 @@
 		mysqli_close($conexion);
 	?>
 					
-				
+					<input type="submit" value="Reservar"/>		
 			</div>
 		</div>
 	</div>

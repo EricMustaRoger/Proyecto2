@@ -98,7 +98,8 @@
 			echo '<div class="desc">';
 			echo '<h3><a href="#"> '.$recurso['rec_name'].'</a></h3>';
 			echo '<span> '.$recurso['rec_tipo'].'</span>';
-			echo '<input type="checkbox" name="reservar[]" value="si"/>Reservar<br/>';
+			$id= $recurso['rec_id'];
+			echo '<input type="checkbox" name="reservar[]" value="$id"/>Reservar<br/>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div>';

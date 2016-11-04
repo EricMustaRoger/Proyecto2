@@ -98,10 +98,11 @@
 			echo '<div class="desc">';
 			echo '<h3><a href="#"> '.$recurso['rec_name'].'</a></h3>';
 			echo '<span> '.$recurso['rec_tipo'].'</span> <br/>';
-			echo '<input type="checkbox"  name="reservar[]" value="$num"  />Reservar<br/>';
+			echo '<input type="checkbox"  name="reservar[]" value="$num"/>Reservar<br/>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div>';
+			
 		}
 		} else {
 			echo " <br/> <br/> No hay datos que mostrar!";
@@ -132,6 +133,7 @@
 	</footer>
 	</div>
 	
+
 	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
