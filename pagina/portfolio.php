@@ -74,19 +74,12 @@
 		extract($_REQUEST);
 
 		$sql = "SELECT * FROM tbl_recursos ";
-		//valores entre fechas minimo y maximo
 		
 		$sql.="WHERE (rec_disp=1)";
 
-		
-		
-		//echo $tl;  
 		echo $sql;
-		
-		
-		//echo "---$sql---<br/><br/>";
+	
 		$reservas = mysqli_query($conexion, $sql);
-		//$anuncios = mysqli_query($conexion, $tl);
 		
 		if(mysqli_num_rows($reservas)!=0){
 			echo "Número de productos: " . mysqli_num_rows($reservas) . "<br/><br/>";
@@ -94,45 +87,26 @@
 					
 			echo '<div class="col-md-3 text-center">'; 
 			echo '<div class="work-inner">';
-			echo '<a href="#" class="work-grid" style="background-image: url ($foto='img/'  . $recurso['rec_foto']. 
-				if (file_exists ($foto)){<img src='" . $foto . "' width='150'/><br/><br/>
+			echo '<a href="#" class="work-grid" style="background-image: url ($foto=img/  '. $recurso['rec_foto'].'
+				if (file_exists ($foto)){<img src="' . $foto . '" width="150"/><br/><br/>
 				} else {
-				<img src='img/0.jpg' width='150'/><br/><br/>
+				<img src="img/0.jpg" width="150"/><br/><br/>
 				}
-				)">';
+				);">';
 			echo '</a>';
 			echo '<div class="desc">';
-			echo '<h3><a href="#"> $recurso['rec_name']</a></h3>';
-			echo '<span> $recurso['rec_tipo']</span>';
+			echo '<h3><a href="#"> '.$recurso['rec_name'].'</a></h3>';
+			echo '<span> '.$recurso['rec_tipo'].'</span>';
 			echo '<input type="checkbox" name="reservar[]" value="$num"/>Reservar<br/>';
 			echo '</div>';
-			echo '	</div>';
-			echo '	</div>';
-
-				
-
+			echo '</div>';
+			echo '</div>';
+		}
 		} else {
-			echo " <br/> <br/>No hay datos que mostrar!";
+			echo " <br/> <br/> No hay datos que mostrar!";
 		}
 		
 		mysqli_close($conexion);
-
-/*
-
-  				echo "Tipo Recurso: " . $recurso['rec_tipo'] . "<br/>";	
-  				echo "Tipo Recurso: " . $recurso['rec_tipo'] . "<br/>";
-  				$rec_id=$recurso['rec_id'];
-  				$rec_id=$recurso['rec_id'];
- 			
- 			<input type="checkbox" name="reservar[]" value="$rec_id"/>Reservar<br/<?php 		 			?>
- 			<input type="checkbox" name="reservar" value=$rec_id/>Reservar<br/>
-				<?php 
-  				echo $rec_id;		  		
-  				$foto='img/'.$recurso['rec_foto'];		  	
-  				if (file_exists ($foto)){
-
-
-*/		
 	?>
 					
 				
