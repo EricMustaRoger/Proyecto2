@@ -15,12 +15,10 @@
 
 		extract($_REQUEST);
 
-		$sql = "ALTER TABLE   WHERE pro_id=$pro_id";
+		$sql = "UPDATE `tbl_recursos` SET `rec_disp` = b'0' WHERE  rec_id=$pro_id"`tbl_recursos`.`rec_id` = $id;
 
-UPDATE `tbl_recursos` SET `rec_disp` = b'0' WHERE `tbl_recursos`.`rec_id` = 4;
-		//echo $sql;
 
-		$eliminar_producto = mysqli_query($conexion, $sql);
+		$actualizar_recurso = mysqli_query($conexion, $sql);
 
-		header('location: 161028_exercici1.php');
+		header('location: portfolio.view.php');
 ?>
