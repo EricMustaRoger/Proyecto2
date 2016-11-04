@@ -11,21 +11,27 @@
 
 	try{
 		
-		echo $_SESSION['usu_name'];
+		echo $_SESSION['usu_name'] . "<br>";
 
 		$conexion = new PDO('mysql:host=localhost;dbname=bd_cromo','root','');
 
-		$statement = $conexion->prepare('SELECT * FROM tbl_recursos WHERE usu_id = :usu_id';
-		$statement->execute(array(':usu_id' => $usu_id));
+		$statement = $conexion->prepare('SELECT * FROM tbl_recursos');
+		// $statement->execute(array());
 
 		///// voy por aquí//////
 		$statement->execute();
 		$resultados = $statement->fetchAll();
-
+		?>
+		<form action="incidencias_realizar.php" method="POST">
+		<?php
 		foreach ($resultados as $recursos) {
-			echo "<td>" . $recursos['anu_titol'] . "</td><td>" . date("d/m/Y", strtotime($recursos['anu_data_anunci'])) . "</td><td>" . "+info</td>";
-		}
-
+			$id = $recursos['rec_id'];
+			$name = $recursos['rec_name'];
+			echo $id . "------ ";
+			echo "<input type='radio' name='rec_id' value='$id' > $name<br>";
+			// echo "<tr><td>" . $recursos['rec_id'] . "</td><td>" . $recursos['rec_name'] . "</td><td>" . $recursos['rec_tipo'] . "</td><td>" . $recursos['rec_disp'] . "</td><td>" . $recursos['rec_foto'] . "</td></tr>";
+		}?>
+		<input type="submit" name="enviar"><?php
 
 
 
