@@ -88,7 +88,13 @@
 
 			echo '<div class="col-md-3 text-center">'; 
 			echo '<div class="work-inner">';
-			echo '<a href="#" class="work-grid" style="background-image: url (if (file_exists ($foto)){<img src="'.$foto.'" width="150"/><br/><br/>} else {<img src="img/0.jpg" width="150"/><br/><br/>});"></a>';
+			if (file_exists($foto)) {
+				$foto = $foto;
+			}else{$foto = 'img/0.jpg';}
+			?>
+			<a href="#" class="work-grid" style="background-image: url(<?php echo $foto; ?>);"></a>
+		
+			<?php
 			echo '<div class="desc">';
 			echo '<h3><a href="#"> '.$recurso['rec_name'].'</a></h3>';
 			echo '<span> '.$recurso['rec_tipo'].'</span>';

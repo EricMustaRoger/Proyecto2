@@ -40,8 +40,8 @@ CREATE TABLE `tbl_incidencias` (
 
 CREATE TABLE `tbl_recursos` (
   `rec_id` int(11) NOT NULL,
-  `rec_name` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
-  `rec_tipo` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `rec_name` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
+  `rec_tipo` varchar(45) COLLATE utf8_spanish_ci NOT NULL,
   `rec_disp` bit(1) NOT NULL,
   `rec_foto` varchar(15) COLLATE utf8_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
