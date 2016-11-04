@@ -77,12 +77,12 @@
 		
 		$sql.="WHERE (rec_disp=1)";
 
-		echo $sql;
+		//echo $sql;
 	
 		$reservas = mysqli_query($conexion, $sql);
 		
 		if(mysqli_num_rows($reservas)!=0){
-			echo "Número de productos: " . mysqli_num_rows($reservas) . "<br/><br/>";
+			echo "<h3> Número de recursos: " . mysqli_num_rows($reservas) . "<h3/><br/><br/>";
 			while($recurso = mysqli_fetch_array($reservas)){
 			$foto='img/'.$recurso['rec_foto'];
 
@@ -97,7 +97,7 @@
 		<?php
 			echo '<div class="desc">';
 			echo '<h3><a href="#"> '.$recurso['rec_name'].'</a></h3>';
-			echo '<span> '.$recurso['rec_tipo'].'</span>';
+			echo '<span> '.$recurso['rec_tipo'].'</span><br/>';
 			$id= $recurso['rec_id'];
 			echo '<input type="checkbox" name="reservar[]" value="$id"/>Reservar<br/>';
 			echo '</div>';
@@ -111,8 +111,9 @@
 		mysqli_close($conexion);
 	?>
 					
-					<input type="submit" value="Reservar"/>		
+					
 			</div>
+				<input type="submit" value="Reservar"/>	
 		</div>
 	</div>
 	</form>

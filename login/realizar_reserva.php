@@ -15,10 +15,11 @@
 
 		extract($_REQUEST);
 
-		$sql = "UPDATE `tbl_recursos` SET `rec_disp` = b'0' WHERE  rec_id=$pro_id"`tbl_recursos`.`rec_id` = $id";
+		$sql = "UPDATE 'tbl_recursos' SET 'rec_disp' = b'0' WHERE  'tbl_recursos'.'rec_id' = $id";
+
 
 
 		$actualizar_recurso = mysqli_query($conexion, $sql);
 
-		header('location: portfolio.view.php');
+		header('location: portfolio.php');
 ?>
