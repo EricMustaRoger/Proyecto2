@@ -1,4 +1,4 @@
-<?php
+<?php session_start();
 
 		//realizamos la conexión
 	$conexion = mysqli_connect('localhost', 'root', '', 'bd_cromo');
@@ -38,5 +38,29 @@
 
 		$actualizar_recurso = mysqli_query($conexion, $sql);
 
-		header('location: portfolio.php');
+	
+
+		
+		?>
+
+		<?php
+		//----------------inserts
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "bd_cromo";
+
+
+
+//realizamos la conexión
+	$conexion = mysqli_connect('localhost', 'root', '', 'bd_cromo');
+	$data = date("Y") . date("m") . date("d") . date("G") . date("i") . date("s");
+	$usu_name = $_SESSION['usu_name'];
+ 	$res_fechaini = $data;
+	$sql = "INSERT INTO tbl_reserva (rec_id, usu_id, res_fechaini)
+	VALUES ($reservar, '$usu_name', $data)";
+
+
+	$conexion->close();
+	header('location: portfolio.php');
 ?>
