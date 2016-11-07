@@ -35,6 +35,7 @@
 		
 
 
+
 		$actualizar_recurso = mysqli_query($conexion, $sql);
 
 		header('location: portfolio.php');
