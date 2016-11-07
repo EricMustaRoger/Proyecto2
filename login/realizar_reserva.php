@@ -14,9 +14,25 @@
 		}
 
 		extract($_REQUEST);
+		if(isset($_POST['submit'])){//to run PHP script on submit
+		if(!empty($_POST['reservar'])){
+		// Loop to store and display values of individual checked checkbox.
+		foreach($_POST['reservar'] as $selected){
+		echo $selected."</br>";
+		}
+		}
+		}
 
-		$sql = "UPDATE 'tbl_recursos' SET 'rec_disp' = b'0' WHERE  'tbl_recursos'.'rec_id' = $id";
 
+		if (isset($_POST['reservar'])){
+		echo $_POST['reservar']; // Displays value of checked checkbox.
+		}   
+
+		$sql = "UPDATE `tbl_recursos` SET `rec_disp` = b'0' WHERE `tbl_recursos`.`rec_id` = $reservar;";
+		//UPDATE `tbl_recursos` SET `rec_disp` = b'0' WHERE `tbl_recursos`.`rec_id` = 4;
+
+		//echo $sql."---------";
+		
 
 
 		$actualizar_recurso = mysqli_query($conexion, $sql);
