@@ -31,11 +31,7 @@
 
 	</head>
 	<body>
-<<<<<<< HEAD
 	<form action="realizar_reserva.php" method="GET">
-=======
-	<form name="f1" action="realizar_reserva.php" method="GET">
->>>>>>> origin/master
 	
 	<div id="fh5co-page">
 	<header id="fh5co-header" role="banner">
@@ -81,12 +77,12 @@
 		
 		$sql.="WHERE (rec_disp=1)";
 
-		//echo $sql;
+		echo $sql;
 	
 		$reservas = mysqli_query($conexion, $sql);
 		
 		if(mysqli_num_rows($reservas)!=0){
-			echo "<h3> Número de recursos: " . mysqli_num_rows($reservas) . "<h3/><br/><br/>";
+			echo "Número de productos: " . mysqli_num_rows($reservas) . "<br/><br/>";
 			while($recurso = mysqli_fetch_array($reservas)){
 			$foto='img/'.$recurso['rec_foto'];
 
@@ -98,13 +94,11 @@
 			?>
 			<a href="#" class="work-grid" style="background-image: url(<?php echo $foto; ?>);"></a>
 		
-		<?php
+			<?php
 			echo '<div class="desc">';
 			echo '<h3><a href="#"> '.$recurso['rec_name'].'</a></h3>';
-			echo '<span> '.$recurso['rec_tipo'].'</span><br/>';
-			$id = $recurso['rec_id'];
-			echo  $id;
-			echo '<input type="radio" name="reservar" value="'.$id.'"/>Reservar<br/>';
+			echo '<span> '.$recurso['rec_tipo'].'</span>';
+			echo '<input type="checkbox" name="reservar[]" value="si"/>Reservar<br/>';
 			echo '</div>';
 			echo '</div>';
 			echo '</div>';
@@ -116,9 +110,8 @@
 		mysqli_close($conexion);
 	?>
 					
-					
+				
 			</div>
-				<input type="submit" value="Reservar"/>	
 		</div>
 	</div>
 	</form>
