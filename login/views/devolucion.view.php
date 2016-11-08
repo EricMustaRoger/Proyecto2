@@ -73,7 +73,7 @@
 		$resultados = $statement->fetchAll();
 		foreach ($resultados as $recursos) {
 			$usu_id = $recursos['usu_id'];
-			echo $usu_id . '</br>';
+			//echo $usu_id . '</br>';
 		}
 		$statement = $conexion->prepare('SELECT * FROM `tbl_reservas` JOIN `tbl_recursos` ON `tbl_reservas`.rec_id=`tbl_recursos`.rec_id WHERE usu_id = :usu_id AND res_fechafin = :res_fechafin');
 		$statement->execute(array(
@@ -90,19 +90,25 @@
 		
 		<?php
 		foreach ($resultados as $reservas) {
-			$id = $reservas['res_id'];
-			$name = $reservas['rec_name'];
-			$foto='img/'.$reservas['rec_foto'];
+			echo '<div class="col-md-3 text-center">'; 
+			echo '<div class="work-inner">';
+			$foto=$reservas['rec_foto'];
+			$foto= 'img/'.$foto;
 			if (file_exists($foto)) {
 				$foto = $foto;
 			}else{$foto = 'img/0.jpg';}
 			?>
 			<a href="#" class="work-grid" style="background-image: url(<?php echo $foto; ?>);"></a>
-			<?php
-			echo "<input type='radio' name='res_id' value='$id' > $name </br>";
-			
-		}?>
-		<input type="submit" name="enviar"><?php
+		<?php
+			echo '<div class="desc">';
+			echo '<h3><a href="#"> '.$reservas['rec_name'].'</a></h3>';
+			echo '<span> '.$reservas['rec_tipo'].'</span><br/>';
+			echo '<input type="radio" name="res_id" value="'.$reservas['res_id'].'"/>Devolver<br/>';
+			echo '</div>';
+			echo '</div>';
+			echo '</div>';
+			}
+		
 
 			
 		$conexion = null;
@@ -111,14 +117,11 @@
 		echo "Error: " . $e->getMessage();
 
 	}
-
-
-
 	
 ?>
-					
 				
 			</div>
+		<input type="submit" name="enviar">
 		</div>
 	</div>
 	</form>

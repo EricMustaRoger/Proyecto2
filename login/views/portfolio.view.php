@@ -100,7 +100,7 @@
 			echo '<h3><a href="#"> '.$recurso['rec_name'].'</a></h3>';
 			echo '<span> '.$recurso['rec_tipo'].'</span><br/>';
 			$id = $recurso['rec_id'];
-			echo  $id;
+			//echo  $id;
 			echo '<input type="radio" name="reservar" value="'.$id.'"/>Reservar<br/>';
 			echo '</div>';
 			echo '</div>';
