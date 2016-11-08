@@ -37,15 +37,15 @@
 	<header id="fh5co-header" role="banner">
 		<div class="container">
 			<div class="header-inner">
-				<h1><?php echo $_SESSION['usu_name']; ?></h1>     <h1><a href="cerrar.php">Cerrar Sesion</a></br></h1>
+				<h1><?php echo $_SESSION['usu_name']. "       "; ?></h1>     <h1><a href="cerrar.php">Cerrar Sesion</a></br></h1>
 				<nav role="navigation">
 					<ul>
 						
 
 						<li><a class="active" href="">Recursos</a></li>
 
+						<li><a href="devolucion.php">Devoluciones</a></li>
 						<li><a href="incidencias.php">Incidencias</a></li>
-						<li><a href="devolucion.php">Devolucion</a></li>
 					</ul>
 				</nav>
 			</div>

@@ -99,7 +99,7 @@
 			}else{$foto = 'img/0.jpg';}
 			?>
 			<a href="#" class="work-grid" style="background-image: url(<?php echo $foto; ?>);"></a>
-		<?php
+			<?php
 			echo '<div class="desc">';
 			echo '<h3><a href="#"> '.$reservas['rec_name'].'</a></h3>';
 			echo '<span> '.$reservas['rec_tipo'].'</span><br/>';
